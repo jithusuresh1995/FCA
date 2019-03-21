@@ -14,20 +14,20 @@ namespace FCAProj.ADMIN_MDL
         ManagerRegistrationClass obj = new ManagerRegistrationClass();
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dispbname = new DataTable();
-
-            dispbname = obj.ExecuteSelectQueries();
-            if (dispbname.Rows.Count > 0)
+            if (!IsPostBack)
             {
+                DataTable dispbname = new DataTable();
 
+                dispbname = obj.ExecuteSelectQueries();
+                if (dispbname.Rows.Count > 0)
+                {
 
-
-                dd_branchname.DataSource = dispbname;
-                dd_branchname.DataTextField = "Branch_name";
-                //ddb_city.DataValueField = "City_id";
-                dd_branchname.DataBind();
+                    dd_branchname.DataSource = dispbname;
+                    dd_branchname.DataTextField = "Branch_name";
+                    dd_branchname.DataValueField = "Branch_id";
+                    dd_branchname.DataBind();
+                }
             }
-
         }
 
         protected void btn_save_Click(object sender, EventArgs e)
@@ -49,10 +49,33 @@ namespace FCAProj.ADMIN_MDL
             obj.Memail = txtm_email.Text;
             obj.Midproof = ddm_idproof.Text;
             obj.Midno = txtm_proofno.Text;
-            // obj.Mphoto=filem_photo.
+            obj.Mphoto = filem_photo.FileName;
             obj.Mquali = txtm_qualification.Text;
             obj.Mexperience = txtm_experience.Text;
-            obj.InsertStudent_Parameter();
+            obj.Branchid =Convert.ToInt32(dd_branchname.SelectedValue);
+            obj.InsertManager_Parameter();
+            obj.Read_Id();
+
+
+            if (filem_photo.HasFile)
+            {
+                filem_photo.SaveAs(Server.MapPath("~/PHOTOS/" + filem_photo.FileName));
+                obj.Mphoto = filem_photo.FileName + "";
+            }
+
+            txtm_name.Text = "";
+            txtm_address.Text = "";
+            txtm_dob.Text = "";
+            txtm_phone.Text = "";
+            txtm_email.Text = "";
+            ddm_idproof.Text = "";
+            txtm_proofno.Text = "";
+            txtm_qualification.Text = "";
+            txtm_experience.Text = "";
+
+            
+           
+
         }
     }
 }

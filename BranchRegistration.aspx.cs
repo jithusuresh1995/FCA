@@ -31,7 +31,7 @@ namespace FCAProj.ADMIN_MDL
             txtbname.Text = "";
             txtb_address.Text = "";
             ddb_district.Text = "";
-            ddb_city.Text = "";
+           //  ddb_city.Text = "";
             txtb_zipcode.Text = "";
             txtb_phone.Text = "";
             txtb_email.Text = "";

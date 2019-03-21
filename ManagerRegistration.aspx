@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManagerRegistration.aspx.cs" Inherits="FCAProj.ADMIN_MDL.ManagerRegistration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ManagerRegistration.aspx.cs" Inherits="FCAProj.ADMIN_MDL.ManagerRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <table class="nav-justified" style="width: 100%; height: 100%; border-collapse:separate;border-spacing:5px;">
@@ -30,6 +30,7 @@
             <td style="width: 46px">&nbsp;</td>
             <td>
                 <asp:DropDownList ID="dd_branchname" runat="server">
+                    <asp:ListItem>---Select---</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td>&nbsp;</td>

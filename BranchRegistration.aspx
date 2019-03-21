@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BranchRegistration.aspx.cs" Inherits="FCAProj.ADMIN_MDL.BranchRegistration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="BranchRegistration.aspx.cs" Inherits="FCAProj.ADMIN_MDL.BranchRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table  style="width: 100%; height: 100%; border-collapse:separate;border-spacing:5px;">
         <tr>
