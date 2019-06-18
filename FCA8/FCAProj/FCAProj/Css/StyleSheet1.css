@@ -1,0 +1,9 @@
+﻿body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/pic3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+   
+}
